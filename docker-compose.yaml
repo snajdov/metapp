@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+
+  redis:
+    image: redis:5-alpine
+    restart: always
+    ports:
+    - 6379:6379
+    volumes:
+    - redis:/data
+
+  postgres:
+    image: postgres:12-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: metapp-admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: metapp
+    ports:
+    - 5432:5432
+    volumes:
+    - postgres:/var/lib/postgresql/data
+
+
+volumes:
+  redis:
+  postgres:
+  data:

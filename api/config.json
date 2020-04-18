@@ -1,0 +1,24 @@
+{
+	"app": {
+		"name": "Metapp",
+		"host": "",
+		"port": 3000
+	},
+	"auth": {
+		"endpoint": "/auth",
+		"key": "jwt.pem",
+		"publicUris": ["^/register.*", "^/time$", "^/health", "^/auth.*", "/user"]
+	},
+	"common": {
+		
+	},
+	"db": {
+
+	},
+	"registration": {
+		"endpoint": "/register"
+	},
+	"user-management": {
+		"endpoint": "/users"
+	}
+}
